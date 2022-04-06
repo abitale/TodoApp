@@ -1,0 +1,11 @@
+<form>
+    <div class="input-group mb-3">
+        <input type="text" name="inputContent" placeholder="Enter todo.." class="form-control" [(ngModel)]="inputContent" />     
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" name="inputDesc" placeholder="Enter desc.." class="form-control" [(ngModel)]="inputDesc" />
+    </div>
+    <input type="submit" value="Add Todo" class="btn-primary" (click)="addTodo()" style="justify-content: center;"/>
+</form>
+<br>
+<p>{{message}}</p>

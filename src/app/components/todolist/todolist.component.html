@@ -1,0 +1,19 @@
+<app-addtodoform (newTodoEvent)="addTodo($event)"></app-addtodoform>
+<ol *ngFor="let todo of todos let i = index;" class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-3 me-auto">
+            <div class="content {{(todo.completed ? 'done' :'')}}" (click)="checkTodo(i)">
+                {{i+1}}. {{todo.content}}
+                <div *ngIf="todo.isShown" style="margin-left: 2rem;margin-right: 2rem;border: 10px;">
+                    {{todo.desc}}
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-warning btn-sm completed" (click)="toggleDone(i)">
+            <i class="bi bi-check-circle"></i>
+        </button>
+        <button class="btn btn-danger btn-sm" (click)="deleteTodo(i)" style="margin-left: 2px;">
+            <i class="bi bi-trash-fill"></i>
+        </button>
+    </li>
+</ol>
