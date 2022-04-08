@@ -7,7 +7,7 @@ function requireHTTPS(req, res, next) {
 
 const express = require('express');
 const app = express();
-const rootDir = './dist/todoapp';
+const rootDir = './dist/TodoApp';
 require('dotenv').config();
 
 process.env.NODE_ENV == 'production' && app.use(requireHTTPS)
